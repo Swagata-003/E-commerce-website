@@ -1,20 +1,185 @@
 import React from "react";
 // import "../design/C.css"
+import "./Category.css";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const Categorywomen=()=>{
     return(
         <>
-        <div id="upper" style={{backgroundImage: `url("/images/backdrop.jpg")`,height:'500px'}}>
-            <div className="container" >
-               <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-           <form class="d-flex" role="search">
-           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <div id="upart">
+        <div className="container">
+        <div className="container col-xxl-8 px-4 pt-5"></div>
+        <div className="row flex-lg-row-reverse align-items-center g-5 pt-5">
+      <div className="col-10 col-sm-8 col-lg-6">
+    <img
+      src="/images/life.jpg"
+      className="d-block mx-lg-auto img-fluid"
+      alt="Bootstrap Themes"
+      width="700"
+      height="500"
+      loading="lazy"
+    />
+  </div>
+  <div className="col-lg-6">
+    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style={{fontFamily:'cursive'}}>
+      Discover new trends!!
+    </h1>
+    <div className="d-grid gap-2 d-md-flex justify-content-md-start" >
+      <nav className="navbar bg-body-tertiary"style={{marginTop:'25px',marginLeft:'-45px'}}>
+     <div className="container-fluid">
+    <form className="d-flex" role="search">
+      <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" style={{width:'500px'}}/>
+      <button className="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
     </div>
-  </nav>
-            </div>
-            </div>
+  </div>
+</div>
+</div>
+</div>
+<div className="container">
+<div className="row">
+<div className="col-auto">
+  <div class="dropdown" style={{marginTop:'20px'}}>
+  <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Price Filters
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#!">Under 1000</a></li>
+    <li><a class="dropdown-item" href="#!">Under 500</a></li>
+    <li><a class="dropdown-item" href="#!">Under 300</a></li>
+  </ul>
+</div>
+</div>
+<div className="col-auto">
+  <div class="dropdown" style={{marginTop:'20px'}}>
+  <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Top Rated
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#!">Crop Tops</a></li>
+    <li><a class="dropdown-item" href="#!">Floral Skirts</a></li>
+    <li><a class="dropdown-item" href="#!">High waist jeans</a></li>
+  </ul>
+</div>
+</div>
+<div className="col-auto">
+  <div class="dropdown" style={{marginTop:'20px'}}>
+  <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    New Arrivals
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#!">Tank Tops</a></li>
+    <li><a class="dropdown-item" href="#!">Halter Neck Tops</a></li>
+    <li><a class="dropdown-item" href="#!">Chikankari Kurtis</a></li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+
+<div className="container">
+<div className="row">
+<div className="col-lg-3 col-md-6 col-sm-12">
+<div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
+  <img src="/images/df.jpg" class="card-img-top" alt="..." height={300}/>
+  <div class="card-body">
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Dresses</p>
+  </div>
+</div>
+</div>
+<div className="col-lg-3 col-md-6 col-sm-12">
+<div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
+  <img src="/images/t.jpg" class="card-img-top" alt="..." height={300}/>
+  <div class="card-body">
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Tops</p>
+  </div>
+</div>
+</div>
+<div className="col-lg-3 col-md-6 col-sm-12">
+<div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
+  <img src="/images/jeans.jpg" class="card-img-top" alt="..." height={300}/>
+  <div class="card-body">
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Jeans</p>
+  </div>
+</div>
+</div>
+<div className="col-lg-3 col-md-6 col-sm-12">
+<div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
+  <img src="/images/k.jpg" class="card-img-top" alt="..." height={300}/>
+  <div class="card-body">
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Kurtis</p>
+  </div>
+</div>
+</div>
+<div className="col-lg-3 col-md-6 col-sm-12">
+<div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
+  <img src="/images/set.webp" class="card-img-top" alt="..." height={300}/>
+  <div class="card-body">
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Kurti Sets</p>
+  </div>
+</div>
+</div>
+<div className="col-lg-3 col-md-6 col-sm-12">
+<div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
+  <img src="/images/s.jpg" class="card-img-top" alt="..." height={300}/>
+  <div class="card-body">
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Sarees</p>
+  </div>
+</div>
+</div>
+<div className="col-lg-3 col-md-6 col-sm-12">
+<div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
+  <img src="/images/lehanga.webp" class="card-img-top" alt="..." height={300}/>
+  <div class="card-body">
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>lehangas</p>
+  </div>
+</div>
+</div>
+<div className="col-lg-3 col-md-6 col-sm-12">
+<div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
+  <img src="/images/jewel.webp" class="card-img-top" alt="..." height={300}/>
+  <div class="card-body">
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Jewellery</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="spart">
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="#!" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
+      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1">
+      <ShoppingCartIcon/>
+        PickNShip
+      </h1>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3">
+        <a class="text-body-secondary" href="#!" aria-label="Instagram">
+         <img src="/images/fb.jpg" alt="...." height={24} width={24}/>
+        </a>
+      </li>
+      <li class="ms-3">
+        <a class="text-body-secondary" href="#!" aria-label="Facebook">
+        <img src="/images/insta.jpg" alt="...." height={24} width={24}/>
+        </a>
+      </li>
+    </ul>
+
+  </footer>
+</div>
+</div>
+
+
+
+
         </>
     )
 }
