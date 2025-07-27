@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import './reg2.css';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Reglogin() {
     const [isLogin, setIsLogin]= useState(true);
-    //const navigate = useNavigate();
+    let navigate = useNavigate();
 
 //   const handleLogin = () => {
 //     navigate('/call');
 //   };
     return(
         <>
-        <div id='reglogin-full'>
+        <div id='reglogin-full' style={{backgroundImage:`url("/images/first.jpg")`,backgroundPosition:'top center',backgroundRepeat:'no-repeat',backgroundSize:'cover'}}>
           <div className='reglogin-container'>
           <div className='reglogin-form-container'>
             <div className='reglogin-form-toggle'>
@@ -24,7 +24,7 @@ export default function Reglogin() {
                 <input type="email" placeholder='Enter your email'></input>
                 <input type="password" placeholder='Enter valid password'></input>
                 <a href='#!'>Forgot Password?</a>
-                <button>Login</button>
+                <button onClick={()=>{navigate("/landing");}}>Login</button>
                 <p>Not a member?<a href='#!' onClick={() => setIsLogin(false)}>Signup Now?</a></p>
             </div>  
             </>:<>
@@ -37,7 +37,7 @@ export default function Reglogin() {
                 <input type="password" placeholder='Enter valid password'></input>
                 <input type="password" placeholder='Confirm password'></input>
                 <a href='#!'>Forgot Password?</a>
-                <button>SignUp</button>
+                <button onClick={()=>{navigate("/landing");}}>SignUp</button>
                <p>Already registered?<a href='#!' onClick={() => setIsLogin(true)}>Login</a></p>
                 </div>
             </>}

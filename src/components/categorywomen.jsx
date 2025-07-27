@@ -2,7 +2,9 @@ import React from "react";
 // import "../design/C.css"
 import "./Category.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {useNavigate} from "react-router-dom"
 const Categorywomen=()=>{
+  let navigate=useNavigate();
     return(
         <>
         <div id="upart">
@@ -20,8 +22,8 @@ const Categorywomen=()=>{
     />
   </div>
   <div className="col-lg-6">
-    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style={{fontFamily:'cursive'}}>
-      Discover new trends!!
+    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style={{fontFamily:'Winky Rough, sans-serif',marginLeft:'-5px'}}>
+      Latest in Women Style's!!
     </h1>
     <div className="d-grid gap-2 d-md-flex justify-content-md-start" >
       <nav className="navbar bg-body-tertiary"style={{marginTop:'25px',marginLeft:'-45px'}}>
@@ -82,7 +84,7 @@ const Categorywomen=()=>{
 <div className="row">
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
-  <img src="/images/df.jpg" class="card-img-top" alt="..." height={300}/>
+  <img src="/images/df.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/dress")}}/>
   <div class="card-body">
     <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Dresses</p>
   </div>
@@ -90,9 +92,9 @@ const Categorywomen=()=>{
 </div>
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
-  <img src="/images/t.jpg" class="card-img-top" alt="..." height={300}/>
+  <img src="/images/t.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/tops");}}/>
   <div class="card-body">
-    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Tops</p>
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}} >Tops</p>
   </div>
 </div>
 </div>

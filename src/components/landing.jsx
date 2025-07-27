@@ -8,7 +8,7 @@ const Landing=()=>{
         <>
          <div id="first">
             <div className="container">
-          <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div className="row flex-lg-row-reverse align-items-center g-5 pt-5">
           <div className="col-10 col-sm-8 col-lg-6">
          <img src="/images/eland.jpg"
            className="d-block mx-lg-auto img-fluid"
@@ -26,8 +26,8 @@ const Landing=()=>{
        Welcome to your one-stop destination for everything you need and love. From the latest fashion trends to everyday essentials, we bring handpicked products to your doorstep with unbeatable prices, secure checkout, and lightning-fast delivery. Shop smarter, live better!!"
       </p>
       <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onClick={()=>{navigate("/reglogin");}}><b>Sign Up</b></button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4"onClick={()=>{navigate("/reglogin");}}><b>Login</b></button>
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" ><b>Browse Collection</b></button>
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" ><b>Shop Now</b></button>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@ const Landing=()=>{
 </div>
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div className="card" style={{width: '18rem',border:'none'}}>
-  <img src="/images/men.jpg" class="card-img-top" alt="..." height={300}/>
+  <img src="/images/men.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/bags");}}/>
   <div className="card-body">
     <p className="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'90px'}}>Bags</p>
   </div>
@@ -62,7 +62,7 @@ const Landing=()=>{
 </div>
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none'}}>
-  <img src="/images/bag.jpg" class="card-img-top" alt="..." height={300}/>
+  <img src="/images/bag.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/sunglasses");}}/>
   <div className="card-body">
     <p className="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'90px'}}>Sunglasses</p>
   </div>
@@ -79,7 +79,7 @@ const Landing=()=>{
   <div className="card-body">
   <p className="card-text" style={{fontFamily:'PT Sans, sans-serif',fontSize:'20px',fontWeight:'bold',marginLeft:'50px'}}>Women Floral Top</p>
   <p className="card-text" style={{fontFamily:'PT Sans, sans-serif',fontSize:'20px',fontWeight:'bold',marginLeft:'90px'}}>Rs.550</p>
-    <button type="button" class="btn btn-primary" style={{marginLeft:'69px',marginTop:'7px',border:'15px'}}>Add To Cart</button>
+    <button type="button" class="btn btn-primary" style={{marginLeft:'69px',marginTop:'7px',border:'15px'}} onClick={()=>{navigate("/payment")}}>Add To Cart</button>
   </div>
 </div>
 </div>
@@ -89,7 +89,7 @@ const Landing=()=>{
   <div className="card-body">
     <p className="card-text" style={{fontFamily:'PT Sans, sans-serif',fontSize:'20px',fontWeight:'bold',marginLeft:'50px'}}>High Waist Jeans</p>
   <p className="card-text" style={{fontFamily:'PT Sans, sans-serif',fontSize:'20px',fontWeight:'bold',marginLeft:'90px'}}>Rs.2250</p>
-    <button type="button" class="btn btn-primary" style={{marginLeft:'69px',marginTop:'7px',border:'15px'}}>Add To Cart</button>
+    <button type="button" class="btn btn-primary" style={{marginLeft:'69px',marginTop:'7px',border:'15px'}} onClick={()=>{navigate("/payment")}}>Add To Cart</button>
   </div>
 </div>
 </div>
@@ -99,7 +99,7 @@ const Landing=()=>{
   <div className="card-body">
     <p className="card-text" style={{fontFamily:'PT Sans, sans-serif',fontSize:'20px',fontWeight:'bold',marginLeft:'50px'}}>Women Floral Dress</p>
   <p className="card-text" style={{fontFamily:'PT Sans, sans-serif',fontSize:'20px',fontWeight:'bold',marginLeft:'90px'}}>Rs.800</p>
-    <button type="button" class="btn btn-primary" style={{marginLeft:'69px',marginTop:'7px',border:'15px'}}>Add To Cart</button>
+    <button type="button" class="btn btn-primary" style={{marginLeft:'69px',marginTop:'7px',border:'15px'}} onClick={()=>{navigate("/payment")}}>Add To Cart</button>
   </div>
 </div>
 </div>
@@ -109,7 +109,7 @@ const Landing=()=>{
   <div className="card-body">
     <p className="card-text" style={{fontFamily:'PT Sans, sans-serif',fontSize:'20px',fontWeight:'bold',marginLeft:'69px'}}>Men T-shirt</p>
   <p className="card-text" style={{fontFamily:'PT Sans, sans-serif',fontSize:'20px',fontWeight:'bold',marginLeft:'90px'}}>Rs.480</p>
-    <button type="button" class="btn btn-primary" style={{marginLeft:'69px',marginTop:'7px',border:'15px'}}>Add To Cart</button>
+    <button type="button" class="btn btn-primary" style={{marginLeft:'69px',marginTop:'7px',border:'15px'}} onClick={()=>{navigate("/payment")}}>Add To Cart</button>
   </div>
 </div>
 </div>
