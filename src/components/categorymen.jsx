@@ -3,8 +3,24 @@ import React from "react";
 import "./Category.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Categorymen=()=>{
   let navigate=useNavigate();
+  const products=[
+      {name:'T-shirts'},
+      {name:'Jeans'},
+      {name:'Shirts'},
+      {name:'Kurtas'},
+      {name:'Kurta Sets'},
+      {name:'Trousers'},
+      {name:'Sweaters'},
+      {name:'Watches'}];
+    const [filteredData,setfilterData]=useState(products);
+    const handleSearch=(e)=>{
+      const text=e.target.value.toLowerCase();
+      const filtered=products.filter((item)=>item.name.trim().toLowerCase().includes(text));
+      setfilterData(filtered);
+    }
     return(
         <>
         <div id="upart">
@@ -29,7 +45,7 @@ const Categorymen=()=>{
       <nav className="navbar bg-body-tertiary"style={{marginTop:'25px',marginLeft:'-45px'}}>
      <div className="container-fluid">
     <form className="d-flex" role="search">
-      <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" style={{width:'500px'}}/>
+      <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" style={{width:'500px'}} onChange={handleSearch}/>
       <button className="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
@@ -82,6 +98,7 @@ const Categorymen=()=>{
 
 <div className="container">
 <div className="row">
+{filteredData.some(item => item.name === "T-shirts") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m3.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/shirts");}}/>
@@ -90,6 +107,8 @@ const Categorymen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Jeans") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m2.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/mjeans");}}/>
@@ -98,6 +117,8 @@ const Categorymen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Shirts") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m1.jpg" class="card-img-top" alt="..." height={300}/>
@@ -106,6 +127,8 @@ const Categorymen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Kurtas") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m4.webp" class="card-img-top" alt="..." height={300}/>
@@ -114,6 +137,8 @@ const Categorymen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Kurta Sets") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m5.webp" class="card-img-top" alt="..." height={300}/>
@@ -122,6 +147,8 @@ const Categorymen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Trousers") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m7.jpg" class="card-img-top" alt="..." height={300}/>
@@ -130,6 +157,8 @@ const Categorymen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Sweaters") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m8.jpg" class="card-img-top" alt="..." height={300}/>
@@ -138,6 +167,8 @@ const Categorymen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Watches") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m6.jpg" class="card-img-top" alt="..." height={300}/>
@@ -146,6 +177,7 @@ const Categorymen=()=>{
   </div>
 </div>
 </div>
+)}
 </div>
 </div>
 <div class="spart">
@@ -154,12 +186,12 @@ const Categorymen=()=>{
     
     <div class="col-md-4 d-flex align-items-center">
       <a href="#!" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
-      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1">
+      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1" style={{cursor:'pointer'}} onClick={()=>{navigate("/landing");}}>
       <ShoppingCartIcon/>
         PickNShip
       </h1>
       </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+      <span class="mb-3 mb-md-0 text-body-secondary">&nbsp;© 2025 Company, Inc</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

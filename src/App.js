@@ -14,6 +14,7 @@ import Mjeans from "./components/mjeans";
 import Wsunglass from "./components/wsunglass";
 import Wbags from "./components/wbags";
 import Payment from "./components/payment";
+import About from "./components/about";
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,7 @@ function App() {
         <Route path="/wsunglass" element={<Wsunglass/>}/>
         <Route path="/wbags" element={<Wbags/>}/>
         <Route path="/payment" element={<Payment/>}/>
+        <Route path="/about" element={<About/>}/>
       </Routes>
     </Router>
       

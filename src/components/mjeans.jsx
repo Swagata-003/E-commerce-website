@@ -12,20 +12,34 @@ const Mjeans =()=>{
     const[selectedState5,setSelectedState5]=useState(null);
     const[selectedState6,setSelectedState6]=useState(null);
     const[selectedState7,setSelectedState7]=useState(null);
+    const products=[
+            {name:'levis'},
+            {name:'Off Duty'},
+            {name:'The Roadster'},
+            {name:'Mast & Harbour'},
+            {name:'DENIMLOOK'},
+            {name:'The Indian Garage'},
+            {name:'StyleCast'},
+            {name:'Jack & Jones'}];
+          const [filteredData,setfilterData]=useState(products);
+          const handleSearch=(e)=>{
+            const text=e.target.value.toLowerCase();
+            const filtered=products.filter((item)=>item.name.trim().toLowerCase().includes(text));
+            setfilterData(filtered);
+          }
     return(
         <>
         <div style={{backgroundColor:'#F3E9DC'}}>
         <div class="container">
   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-    <p className="display-5 fw-bold text-body-emphasis lh-1 mb-3" id="sec" style={{fontSize:'50px',marginTop:'20px'}} >
+    <p className="display-5 fw-bold text-body-emphasis lh-1 mb-3" id="sec" style={{fontSize:'50px',marginTop:'20px',cursor:'pointer'}} onClick={()=>{navigate("/landing");}}>
       <ShoppingCartIcon/>
         PickNShip
       </p>
-    </a>
+    
     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" style={{marginLeft:'840px'}}>
-      <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
+      <input type="search" class="form-control" placeholder="Search..." aria-label="Search" onChange={handleSearch} />
     </form>
     <div class="dropdown text-end">
       <a href="#!" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,7 +50,7 @@ const Mjeans =()=>{
         <li><a class="dropdown-item" href="#!">Orders Placed</a></li>
         <li><a class="dropdown-item" href="#!">Wishlist</a></li>
         <li><hr class="dropdown-divider"/></li>
-        <li><a class="dropdown-item" href="#!">Sign out</a></li>
+        <li style={{cursor:'pointer',marginLeft:'15px'}} onClick={()=>{navigate("/landing")}}>Sign out</li>
       </ul>
     </div>
   </div>
@@ -44,6 +58,7 @@ const Mjeans =()=>{
 </div>
 <div className="container">
   <div className="row">
+  {filteredData.some(item => item.name === "levis") && (
   <div className="col-lg-3 col-md-6 col-sm-12">
     <div class="card" style={{width: '18rem',marginTop:'15px',height:'530px'}}>
   <img src="/images/m78.webp" class="card-img-top" alt="..." />
@@ -68,6 +83,8 @@ const Mjeans =()=>{
   </div>
 </div>
   </div>
+  )}
+  {filteredData.some(item => item.name === "Off Duty") && (
   <div className="col-lg-3 col-md-6 col-sm-12">
     <div class="card" style={{width: '18rem',marginTop:'15px',height:'530px'}}>
   <img src="/images/m79.webp" class="card-img-top" alt="..."  />
@@ -92,6 +109,8 @@ const Mjeans =()=>{
   </div>
 </div>
   </div>
+  )}
+  {filteredData.some(item => item.name === "The Roadster") && (
   <div className="col-lg-3 col-md-6 col-sm-12">
     <div class="card" style={{width: '18rem',marginTop:'15px',height:'530px'}}>
   <img src="/images/m80.webp" class="card-img-top" alt="..." />
@@ -116,6 +135,8 @@ const Mjeans =()=>{
   </div>
 </div>
   </div>
+  )}
+  {filteredData.some(item => item.name === "Mast & Harbour") && (
   <div className="col-lg-3 col-md-6 col-sm-12">
     <div class="card" style={{width: '18rem',marginTop:'15px',height:'530px'}}>
   <img src="/images/m81.webp" class="card-img-top" alt="..." />
@@ -140,6 +161,8 @@ const Mjeans =()=>{
   </div>
 </div>
   </div>
+  )}
+  {filteredData.some(item => item.name === "DENIMLOOK") && (
   <div className="col-lg-3 col-md-6 col-sm-12">
     <div class="card" style={{width: '18rem',marginTop:'15px',height:'530px'}}>
   <img src="/images/m82.webp" class="card-img-top" alt="..." height={290} />
@@ -164,6 +187,8 @@ const Mjeans =()=>{
   </div>
 </div>
   </div>
+  )}
+  {filteredData.some(item => item.name === "The Indian Garage") && (
   <div className="col-lg-3 col-md-6 col-sm-12">
     <div class="card" style={{width: '18rem',marginTop:'15px',height:'530px'}}>
   <img src="/images/m83.webp" class="card-img-top" alt="..."  />
@@ -188,6 +213,8 @@ const Mjeans =()=>{
   </div>
 </div>
   </div>
+  )}
+  {filteredData.some(item => item.name === "StyleCast") && (
   <div className="col-lg-3 col-md-6 col-sm-12">
     <div class="card" style={{width: '18rem',marginTop:'15px',height:'530px'}}>
   <img src="/images/m84.webp" class="card-img-top" alt="..."  />
@@ -212,6 +239,8 @@ const Mjeans =()=>{
   </div>
 </div>
   </div>
+  )}
+  {filteredData.some(item => item.name === "Jack & Jones") && (
   <div className="col-lg-3 col-md-6 col-sm-12">
     <div class="card" style={{width: '18rem',marginTop:'15px',height:'530px'}}>
   <img src="/images/m85.webp" class="card-img-top" alt="..."  />
@@ -236,6 +265,7 @@ const Mjeans =()=>{
   </div>
 </div>
   </div>
+  )}
 </div>
 </div> 
 <div style={{backgroundColor:'#F3E9DC',height:'80px'}}>
@@ -243,13 +273,13 @@ const Mjeans =()=>{
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     
     <div class="col-md-4 d-flex align-items-center">
-      <a href="#!" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
-      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1">
+      
+      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1"  style={{cursor:'pointer'}} onClick={()=>{navigate("/landing")}}>
       <ShoppingCartIcon/>
         PickNShip
       </h1>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+     
+      <span class="mb-3 mb-md-0 text-body-secondary">&nbsp;© 2025 Company, Inc</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

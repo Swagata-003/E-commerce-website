@@ -2,9 +2,26 @@ import React from "react";
 // import "../design/C.css"
 import "./Category.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import { useState } from "react";
 const Categorywomen=()=>{
   let navigate=useNavigate();
+  const products=[
+    {name:'Dresses'},
+    {name:'Tops'},
+    {name:'Jeans'},
+    {name:'Kurtis'},
+    {name:'Kurti Sets'},
+    {name:'Sarees'},
+    {name:'lehangas'},
+    {name:'Jewellery'}];
+    // eslint-disable-next-line
+  const [filteredData,setfilterData]=useState(products);
+  const handleSearch=(e)=>{
+    const text=e.target.value.toLowerCase();
+    const filtered=products.filter((item)=>item.name.trim().toLowerCase().includes(text));
+    setfilterData(filtered);
+  }
     return(
         <>
         <div id="upart">
@@ -29,8 +46,8 @@ const Categorywomen=()=>{
       <nav className="navbar bg-body-tertiary"style={{marginTop:'25px',marginLeft:'-45px'}}>
      <div className="container-fluid">
     <form className="d-flex" role="search">
-      <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" style={{width:'500px'}}/>
-      <button className="btn btn-outline-success" type="submit">Search</button>
+      <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" style={{width:'500px'}} onChange={handleSearch}/>
+      <button className="btn btn-outline-success" type="submit" >Search</button>
     </form>
   </div>
 </nav>
@@ -82,6 +99,7 @@ const Categorywomen=()=>{
 
 <div className="container">
 <div className="row">
+{filteredData.some(item => item.name === "Dresses") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/df.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/dress")}}/>
@@ -90,6 +108,8 @@ const Categorywomen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Tops") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/t.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/tops");}}/>
@@ -98,6 +118,8 @@ const Categorywomen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Jeans") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/jeans.jpg" class="card-img-top" alt="..." height={300}/>
@@ -106,6 +128,8 @@ const Categorywomen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Kurtis") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/k.jpg" class="card-img-top" alt="..." height={300}/>
@@ -114,6 +138,8 @@ const Categorywomen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Kurti Sets") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/set.webp" class="card-img-top" alt="..." height={300}/>
@@ -122,6 +148,8 @@ const Categorywomen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Sarees") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/s.jpg" class="card-img-top" alt="..." height={300}/>
@@ -130,6 +158,8 @@ const Categorywomen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "lehangas") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/lehanga.webp" class="card-img-top" alt="..." height={300}/>
@@ -138,6 +168,8 @@ const Categorywomen=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Jewellery") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/jewel.webp" class="card-img-top" alt="..." height={300}/>
@@ -146,6 +178,7 @@ const Categorywomen=()=>{
   </div>
 </div>
 </div>
+)}
 </div>
 </div>
 <div class="spart">
@@ -153,13 +186,13 @@ const Categorywomen=()=>{
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     
     <div class="col-md-4 d-flex align-items-center">
-      <a href="#!" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
-      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1">
+      
+      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1" style={{cursor:'pointer'}} onClick={()=>{navigate("/landing");}}>
       <ShoppingCartIcon/>
         PickNShip
       </h1>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+      
+      <span class="mb-3 mb-md-0 text-body-secondary">&nbsp;© 2025 Company, Inc</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

@@ -23,11 +23,11 @@ const Landing=()=>{
         PickNShip
       </h1>
       <p className="lead" style={{fontWeight:'bold',fontFamily:'PT Sans, sans-serif',marginBottom:'25px'}}>
-       Welcome to your one-stop destination for everything you need and love. From the latest fashion trends to everyday essentials, we bring handpicked products to your doorstep with unbeatable prices, secure checkout, and lightning-fast delivery. Shop smarter, live better!!"
+       Welcome to your one-stop destination for everything you need and love. From the latest fashion trends to fashion essentials, we bring handpicked products to your doorstep with unbeatable prices, secure checkout, and lightning-fast delivery. Shop smarter, live better!!"
       </p>
       <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" ><b>Browse Collection</b></button>
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" ><b>Shop Now</b></button>
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onClick={()=>{navigate("/categorywomen")}}><b>Browse Collection</b></button>
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onClick={()=>{navigate("/categorywomen")}}><b>Shop Now</b></button>
       </div>
     </div>
   </div>
@@ -64,7 +64,7 @@ const Landing=()=>{
 <div class="card" style={{width: '18rem',border:'none'}}>
   <img src="/images/bag.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/sunglasses");}}/>
   <div className="card-body">
-    <p className="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'90px'}}>Sunglasses</p>
+    <p className="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'50px'}}>Sunglasses</p>
   </div>
 </div>
 </div>
@@ -132,8 +132,8 @@ const Landing=()=>{
         <li className="nav-item mb-2">
           <a href="#!" className="nav-link p-0 text-body-secondary">FAQs</a>
         </li>
-        <li className="nav-item mb-2">
-          <a href="#!" className="nav-link p-0 text-body-secondary">About</a>
+        <li className="nav-item mb-2" onClick={()=>navigate("/about")} style={{cursor:'pointer'}}>
+          About
         </li>
       </ul>
     </div>

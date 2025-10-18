@@ -3,8 +3,24 @@ import React from "react";
 import "./Category.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Sunglasses=()=>{
   let navigate=useNavigate();
+  const products=[
+        {name:'Oversized'},
+        {name:'Oval shaped'},
+        {name:'Rectangular Women'},
+        {name:'Sports'},
+        {name:'Round'},
+        {name:'Retro'},
+        {name:'Polarized'},
+        {name:'Rectangular Men'}];
+      const [filteredData,setfilterData]=useState(products);
+      const handleSearch=(e)=>{
+        const text=e.target.value.toLowerCase();
+        const filtered=products.filter((item)=>item.name.trim().toLowerCase().includes(text));
+        setfilterData(filtered);
+      }
     return(
         <>
         <div id="upart">
@@ -29,7 +45,7 @@ const Sunglasses=()=>{
       <nav className="navbar bg-body-tertiary"style={{marginTop:'25px',marginLeft:'-45px'}}>
      <div className="container-fluid">
     <form className="d-flex" role="search">
-      <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" style={{width:'500px'}}/>
+      <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" style={{width:'500px'}} onChange={handleSearch}/>
       <button className="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
@@ -81,6 +97,7 @@ const Sunglasses=()=>{
 </div>
 <div className="container">
 <div className="row">
+{filteredData.some(item => item.name === "Oversized") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m10.jpg" class="card-img-top" alt="..." height={300} onClick={()=>{navigate("/wsunglass");}}/>
@@ -89,6 +106,8 @@ const Sunglasses=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Oval shaped") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m13.jpg" class="card-img-top" alt="..." height={300}/>
@@ -97,14 +116,18 @@ const Sunglasses=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Rectangular Women")&& (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m14.jpg" class="card-img-top" alt="..." height={300}/>
   <div class="card-body">
-    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Rectangular</p>
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Rectangular Women</p>
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Sports") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m21.jpg" class="card-img-top" alt="..." height={300}/>
@@ -113,6 +136,8 @@ const Sunglasses=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Round") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m16.jpg" class="card-img-top" alt="..." height={300}/>
@@ -121,6 +146,8 @@ const Sunglasses=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Retro") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m19.jpg" class="card-img-top" alt="..." height={300}/>
@@ -129,6 +156,8 @@ const Sunglasses=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Polarized") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m20.jpg" class="card-img-top" alt="..." height={300}/>
@@ -137,14 +166,17 @@ const Sunglasses=()=>{
   </div>
 </div>
 </div>
+)}
+{filteredData.some(item => item.name === "Rectangular Men") && (
 <div className="col-lg-3 col-md-6 col-sm-12">
 <div class="card" style={{width: '18rem',border:'none',marginTop:'25px'}}>
   <img src="/images/m15.jpg" class="card-img-top" alt="..." height={300}/>
   <div class="card-body">
-    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Rectangular</p>
+    <p class="card-text" style={{fontFamily:'cursive',fontSize:'30px',fontWeight:'bold',marginLeft:'60px'}}>Rectangular Men</p>
   </div>
 </div>
 </div>
+)}
 </div>
 </div>
 <div class="spart">
@@ -152,13 +184,11 @@ const Sunglasses=()=>{
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     
     <div class="col-md-4 d-flex align-items-center">
-      <a href="#!" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
-      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1">
+      <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-1" id="sec1" style={{cursor:'pointer'}} onClick={()=>{navigate("/landing");}}>
       <ShoppingCartIcon/>
         PickNShip
       </h1>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+      <span class="mb-3 mb-md-0 text-body-secondary">&nbsp;© 2025 Company, Inc</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
